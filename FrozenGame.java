@@ -53,6 +53,7 @@ public class FrozenGame extends GameScreen
 {
 	public final static int HORIZONTAL_MOVE = 0;
 	public final static int FIRE = 1;
+	public final static int KEY_BACKSPACE = 8;
 	
 	public final static int KEY_UP = 38;
 	public final static int KEY_LEFT = 37;
@@ -648,6 +649,11 @@ public class FrozenGame extends GameScreen
 					removeSprite(hurrySprite);
 				}
 			}
+		}
+
+		if (KEY_BACKSPACE = )
+		{
+		
 		}
 		
 		if (fixedBubbles == 6)

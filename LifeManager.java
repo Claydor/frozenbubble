@@ -86,4 +86,9 @@ public class LifeManager extends Sprite
 			g.drawImage(penguin, 601-i*36, 3, applet);
 		}
 	}
+
+	public final void cheat()
+	{
+		
+	}
 }
