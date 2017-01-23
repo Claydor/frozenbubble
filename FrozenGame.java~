@@ -468,12 +468,12 @@ public class FrozenGame extends GameScreen
             soundKeyPressed = newSoundKeyState;
         }
 
-        if (newCheatState != cheatKeyPressed) {
-        	if (newCheatState) {
-        		lifeManager.cheat();
-        	}
-	    	cheatKeyPressed = newCheatState;
+	if (newCheatState != cheatKeyPressed) {
+	    if (newCheatState) {
+		lifeManager.cheat();
 	    }
+	    cheatKeyPressed = newCheatState;
+	}                
                 
 		if (move[FIRE] == 0)
 		{
