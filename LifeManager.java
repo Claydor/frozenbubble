@@ -81,7 +81,7 @@ public class LifeManager extends Sprite
 	
 	public final void paint(Graphics g, GameApplet applet)
 	{
-		for (int i=0 ; i<currentLife ; i++)
+		for (int i=0 ; i < currentLife ; i++)
 		{
 			g.drawImage(penguin, 601-i*36, 3, applet);
 		}
@@ -89,6 +89,6 @@ public class LifeManager extends Sprite
 
 	public final void cheat()
 	{
-		
+		currentLife++;
 	}
 }

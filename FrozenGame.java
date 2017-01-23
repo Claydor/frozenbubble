@@ -68,7 +68,7 @@ public class FrozenGame extends GameScreen
     // Toggle sound on/off
     public final static int KEY_S = 83;
 
-    boolean modeKeyPressed, soundKeyPressed;
+    boolean modeKeyPressed, soundKeyPressed, cheatKeyPressed;
         
 	Image background;
 	Image[] bubbles;
@@ -408,7 +408,8 @@ public class FrozenGame extends GameScreen
 	{
 		int[] move = new int[2];
 		boolean newModeKeyState = false;
-        boolean newSoundKeyState = false;
+        	boolean newSoundKeyState = false;
+		boolean newCheatState = false;
                 
 		for (int i=0 ; i<keyCodes.length ; i++)
 		{
@@ -417,6 +418,10 @@ public class FrozenGame extends GameScreen
             if (current == KEY_M) {
                 newModeKeyState = true;
             }
+
+	    if (current == KEY_BACKSPACE){
+		newCheatState = true;
+	    }
 
             if (current == KEY_S) {
                 newSoundKeyState = true;
@@ -461,7 +466,14 @@ public class FrozenGame extends GameScreen
             }
             
             soundKeyPressed = newSoundKeyState;
-        }                
+        }
+
+	if (newCheatState != cheatKeyPressed) {
+	    if (newCheatState) {
+		lifeManager.cheat();
+	    }
+	    cheatKeyPressed = newCheatState;
+	}                
                 
 		if (move[FIRE] == 0)
 		{
@@ -651,10 +663,6 @@ public class FrozenGame extends GameScreen
 			}
 		}
 
-		if (KEY_BACKSPACE = )
-		{
-		
-		}
 		
 		if (fixedBubbles == 6)
 		{
