@@ -52,7 +52,10 @@ public class LifeManager extends Sprite
 	public final static int NB_LIVES = 4;
 	
 	private int currentLife;
+	private int maxLives = 16;
 	private Image penguin;
+	private int line;
+	private int j;
 	
 	public LifeManager(GameApplet applet)
 	{
@@ -81,14 +84,29 @@ public class LifeManager extends Sprite
 	
 	public final void paint(Graphics g, GameApplet applet)
 	{
-		for (int i=0 ; i < currentLife ; i++)
+		line = 3;
+		j = 0;
+		for (int i=0; i < currentLife; i++)
 		{
-			g.drawImage(penguin, 601-i*36, 3, applet);
+			if (i == 4) {
+				line = 3;
+				j = 0;
+			}
+			if (i%4 == 0 && i != 0) {
+				line = line+36;
+				j = 0;
+			}
+			
+			g.drawImage(penguin, 601-j*36, line, applet);
+			
+			j++;
 		}
 	}
 
 	public final void cheat()
 	{
-		currentLife++;
+		if (currentLife < maxLives) {
+			currentLife++;
+		}
 	}
 }
